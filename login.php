@@ -1,10 +1,9 @@
 <?php
 
-$username = $_GET['username'];
-$passwd = $_GET['passwd'];
-
 // Set up connection
-$connection_string = "host=db.cecs.pdx.edu dbname=arik182 user=$username password=$passwd";
+$connection_string = "host=db.cecs.pdx.edu dbname=arik182 user=" . $_POST['username'] . " password=" . $_POST['passwd'];
+
+$connection = pg_connect($connection_string) or die ("Could not connect to DB");
 
 // Extract query
 $query = "	
