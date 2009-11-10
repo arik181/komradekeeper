@@ -1,10 +1,7 @@
 <?php
 
 // Set up connection
-//$connection_string = "host=dbclass.cs.pdx.edu dbname=cs386 user=cs386 password=introdb";
-$connection_string = "host=db.cecs.pdx.edu dbname=arik182 user=arik182 password=wwjcd181";
-
-$connection = pg_connect($connection_string) or die ("Could not connect to postgres" . pg_last_error($connection));
+//$connection_string = "";
 
 // Extract query
 $query = "	
