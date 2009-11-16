@@ -47,7 +47,7 @@
       <td><input type="password" name="passwd"></td>
      </tr>
      <tr>
-      <td> Password (again): <td><input type="password" name="passwd"></td>
+      <td> Password (again): <td><input type="password" name="passwd2"></td>
      </tr>
      <tr>
       <td colspan=2 align="right"> <input type="submit" value="Add new user"> </td>

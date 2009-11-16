@@ -43,7 +43,7 @@
      </tr>
      <tr>
       <td align="left"><a href=newuser.php>New User?</a> </td>
-      <td align=left><input type="submit" value="Log In"></td>
+      <td align=right><input type="submit" value="Log In"></td>
      </tr>
      <tr>
      </tr>
