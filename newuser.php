@@ -39,21 +39,18 @@
       </td>
      </tr>
      <tr>
-      <td>
-      Username: <td><input type="text" name="username"></td><br>
-      </td>
+      <td> Username: </td>
+      <td><input type="text" name="username"></td>
      </tr>
      <tr>
-      <td>
-      Password: <td><input type="password" name="passwd"></td><br>
+      <td> Password: </td>
+      <td><input type="password" name="passwd"></td>
      </tr>
      <tr>
-      <td>
-      Password (again): <td><input type="password" name="passwd"></td><br>
+      <td> Password (again): <td><input type="password" name="passwd"></td>
      </tr>
      <tr>
-      <td />
-      <td align="left"> <input type="submit" value="Add new user"> </td>
+      <td colspan=2 align="right"> <input type="submit" value="Add new user"> </td>
      </tr>
     </table>
    </form>
