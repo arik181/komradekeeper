@@ -34,16 +34,17 @@
    <form action="login.php" method="POST">
     <table border=0 cellpadding=4 cellspacing=4>
      <tr>
-      <td>
-      Username: <td><input type="text" name="username"></td><br>
+      <td> Username: </td>
+      <td><input type="text" name="username"></td>
       </td>
+     </tr>
      <tr>
-      <td>
-      Password: <td><input type="password" name="passwd"></td><br>
+      <td>Password: </td>
+      <td><input type="password" name="passwd"></td>
+     </tr>
      <tr>
-      <td />
-      <td align="left"><a href=newuser.php>New User?</a> 
-      <input type="submit" value="Log In"> </td>
+      <td align="left"><a href=newuser.php>New User?</a> </td>
+      <td align=left><input type="submit" value="Log In"></td>
      </tr>
      <tr>
      </tr>
