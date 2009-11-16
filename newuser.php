@@ -25,7 +25,7 @@
 </div>
 <p>
 <div align="left" style="body">
- <span class="whitek">K<br></span>
+ <a href=.><span class="whitek">K<br></span></a>
  <span class="body meshadow1">Komrade Keeper<br></span>
  <span class="body metext">Komrade Keeper<br></span>
  <div align="left" class="bordershadow main1shadow"> </div>
