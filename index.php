@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<title>arik181</title>
+<title>Komrade Keeper</title>
  <meta name="author" content="">
  <meta name="date" content="2008-11-08T20:32:31-0800">
  <meta name="copyright" content="">
@@ -42,8 +42,8 @@
       Password: <td><input type="password" name="passwd"></td><br>
      <tr>
       <td />
-      <td align="left"><a href=newuser.php>New User?</a> </td>
-      <td align="left"> <input type="submit" value="Log In"> </td>
+      <td align="left"><a href=newuser.php>New User?</a> 
+      <input type="submit" value="Log In"> </td>
      </tr>
      <tr>
      </tr>
