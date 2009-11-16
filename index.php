@@ -39,7 +39,7 @@
 				</td>
 				<tr>
 				<td>
-					Password: <td><input type="text" name="passwd"></td><br>
+					Password: <td><input type="password" name="passwd"></td><br>
 				<tr>
 					<td></td><td align="right"> <input type="submit" value="Log In"> </td>
 				</table>
