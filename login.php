@@ -1,9 +1,5 @@
 <?php
-
-// Set up connection
-$connection_string = "host=db.cecs.pdx.edu dbname=arik182 user=" . $_POST['username'] . " password=" . $_POST['passwd'];
-
-$connection = pg_connect($connection_string) or die ("Could not connect to DB");
+include("connect.php");
 
 // Extract query
 $query = "	
@@ -82,7 +78,5 @@ echo '	</div>' . "\n";
 echo '</div>\n</div>\n<p>\n</body>\n</html>' . "\n";
 
 pg_close($connection);
-
-
 
 ?>
