@@ -1,23 +1,13 @@
 <?php
- include('head.php');
-?>
-<div align="left" class="leftbottom"> </div>
-<div align="left" class="topbar"> </div>
-<div align="left" class="rightbar"> </div>
-<div align="left" class="nametag1"> </div>
-<div align="left" class="nametag2"> </div>
 
-<div align="center" class="lefttop">
-</div>
-<p>
-<div align="left" style="body">
- <a href=.><span class="whitek">K<br></span></a>
- <span class="body meshadow1">Komrade Keeper<br></span>
- <span class="body metext">Komrade Keeper<br></span>
- <div align="left" class="bordershadow main1shadow"> </div>
- <div align="left" class="border main1">
-  <div align="left" class="listinput sub">
-   <form action="login.php" method="POST">
+ include('head.php');
+
+ if ($_SERVER['REQUEST_METHOD'] != 'POST')
+ {
+   $me = $_SERVER['PHP_SELF'];
+
+?>
+   <form action="<?php echo $me;?>" method="POST">
     <table border=0 cellpadding=4 cellspacing=4>
      <tr>
       <td> Username: </td>
@@ -35,10 +25,34 @@
      </tr>
     </table>
    </form>
-  </div>
- </div>
-</div>
-</div>
+
 <?php
+ } else
+ {
+  include('connect.php');
+
+  // Compare the username and pass to the database
+  $query = "
+   SELECT name, password 
+   FROM users 
+   WHERE name = '" . $_POST['username'] . "' AND password = '" . $_POST['passwd'] . "';";
+
+  $result = pg_query($connection, $query);
+  //$colnum = pg_num_fields($result);
+  $rownum = pg_num_rows($result);
+
+
+  if (!$result || !$rownum)
+  {
+    echo "Sorry, that username/password combination does not exist.";
+  }
+  else
+  {
+    echo "Welcome!";
+  }
+
+  // Close db connection
+  pg_close($connection);
+ }
  include('tail.php');
 ?>

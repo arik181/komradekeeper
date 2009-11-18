@@ -3,20 +3,8 @@
 // Header
 include('head.php');
 
-if ($_SERVER['REQUEST_METHOD'] != 'POST'){
- $me = $_SERVER['PHP_SELF'];
-
 // Connect to db
 include("connect.php");
-
-// 
-//
-//
-//
-//
-//
-//
-//
 
 // Extract query
 $query = "	
@@ -32,12 +20,6 @@ pg_close($connection);
 ?>
 
 <!-- Begin html -->
-
-<div align="left" class="leftbottom"> </div>
-<div align="left" class="topbar"> </div>
-<div align="left" class="rightbar"> </div>
-<div align="left" class="nametag1"> </div>
-<div align="left" class="nametag2"> </div>
 
 <div align="center" class="lefttop">
 </div>

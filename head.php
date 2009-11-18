@@ -15,3 +15,18 @@
  <link type="text/css" title="blue" rel="stylesheet" href="blue.css">
 </head>
 <body>
+<div align="left" class="leftbottom"> </div>
+<div align="left" class="topbar"> </div>
+<div align="left" class="rightbar"> </div>
+<div align="left" class="nametag1"> </div>
+<div align="left" class="nametag2"> </div>
+<div align="center" class="lefttop">
+</div>
+<p>
+<div align="left" style="body">
+ <a href=.><span class="whitek">K<br></span></a>
+ <span class="body meshadow1">Komrade Keeper<br></span>
+ <span class="body metext">Komrade Keeper<br></span>
+ <div align="left" class="bordershadow main1shadow"> </div>
+ <div align="left" class="border main1">
+  <div align="left" class="listinput sub">
