@@ -76,7 +76,7 @@
     // a sequence that we can retrieve from the database.
     $query = "
     INSERT INTO users
-    VALUES ('" . ($rownum + 1) . "','" . $_POST['passwd'] . "','" . $_POST['username'] . "');";
+    VALUES ( nextval('useridseq'),'" . $_POST['passwd'] . "','" . $_POST['username'] . "');";
     $result = pg_query($connection, $query);
 }
   else 
