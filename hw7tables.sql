@@ -69,14 +69,14 @@ insert into users values ( nextval('useridseq'), 'passwd', 'The Dude');
 insert into users values ( nextval('useridseq'), 'passwd', 'Some Guy');
 insert into users values ( nextval('useridseq'), 'passwd', 'Some Other Guy');
 
-insert into contact values ( nextval('contactidseq'), 'Komrade Joe', '9000 S Somewhere St.', 'City of Elephants', 'KY', '38313', '001');
-insert into contact values ( nextval('contactidseq'), 'Komrade Mac', '9100 S Somewhere St.', 'City of Dinosaurs', 'NJ', '38213', '001');
-insert into contact values ( nextval('contactidseq'), 'Komrade Karl', '9200 S Somewhere St.', 'City of Flies', 'OK', '38333', '003');
-insert into contact values ( nextval('contactidseq'), 'Komrade Sigmund', '9300 S Somewhere St.', 'City of Piggies', 'OK', '48313', '003');
-insert into contact values ( nextval('contactidseq'), 'Komrade Stork', '9400 S Somewhere St.', 'City of Brambles', 'OK', '78313', '002');
-insert into contact values ( nextval('contactidseq'), 'Komrade Eddie', '9500 S Somewhere St.', 'City of Lights', 'NH', '38613', '002');
-insert into contact values ( nextval('contactidseq'), 'Komrade Steve', '9600 S Somewhere St.', 'City of Beer', 'NH', '38353', '004');
-insert into contact values ( nextval('contactidseq'), 'Komrade Bill', '9700 S Somewhere St.', 'City of Potato Chips', 'DC', '39313', '004');
+insert into contact values ( nextval('contactidseq'), 'Komrade Joe', '9000 S Somewhere St.', 'City of Elephants', 'KY', '38313', '1');
+insert into contact values ( nextval('contactidseq'), 'Komrade Mac', '9100 S Somewhere St.', 'City of Dinosaurs', 'NJ', '38213', '1');
+insert into contact values ( nextval('contactidseq'), 'Komrade Karl', '9200 S Somewhere St.', 'City of Flies', 'OK', '38333', '3');
+insert into contact values ( nextval('contactidseq'), 'Komrade Sigmund', '9300 S Somewhere St.', 'City of Piggies', 'OK', '48313', '3');
+insert into contact values ( nextval('contactidseq'), 'Komrade Stork', '9400 S Somewhere St.', 'City of Brambles', 'OK', '78313', '2');
+insert into contact values ( nextval('contactidseq'), 'Komrade Eddie', '9500 S Somewhere St.', 'City of Lights', 'NH', '38613', '2');
+insert into contact values ( nextval('contactidseq'), 'Komrade Steve', '9600 S Somewhere St.', 'City of Beer', 'NH', '38353', '4');
+insert into contact values ( nextval('contactidseq'), 'Komrade Bill', '9700 S Somewhere St.', 'City of Potato Chips', 'DC', '39313', '4');
 
 insert into phone values ( '15555555', '1', 'home');
 insert into phone values ( '15555555', '2', 'home');

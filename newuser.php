@@ -71,9 +71,6 @@
     $rownum = pg_num_rows($result);
 
     // Insert the username
-    // Note: The following query is broken. It does not yet properly
-    // serialize the user id number. What we need here is
-    // a sequence that we can retrieve from the database.
     $query = "
     INSERT INTO users
     VALUES ( nextval('useridseq'),'" . $_POST['passwd'] . "','" . $_POST['username'] . "');";
