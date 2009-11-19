@@ -109,5 +109,5 @@ insert into organization values ( nextval('orgidseq'), 'intel', '9001 S Nowhere 
 
 insert into contactorg values ( '1', '1', 'Supervisor');
 
-grant all on users, contact, phone, email, other, organization, contactorg to zacharyp;
-grant all on users, contact, phone, email, other, organization, contactorg to arik182;
+grant all on users, contact, phone, email, other, organization, contactorg, orgidseq, contactidseq, otheridseq, useridseq to zacharyp, arik182;
+
