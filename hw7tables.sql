@@ -104,4 +104,5 @@ insert into organization values ( '001', 'intel', '9001 S Nowhere Ave.', 'Intel 
 
 insert into contactorg values ( '001', '001', 'Supervisor');
 
-
+grant all on users, contact, phone, email, other, organization, contactorg to zacharyp;
+grant all on users, contact, phone, email, other, organization, contactorg to arik182;
