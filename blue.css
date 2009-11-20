@@ -76,6 +76,39 @@ img {
 	width:160px;
 	height:280px;
 }
+.menu
+{
+	position:absolute;
+	left: 10px;
+	top:0px;
+	width:120px;
+	height:180px;
+}
+.menutaboverlay
+{
+	position:absolute;
+	left: 0px;
+	top:30px;
+	width:120px;
+	height:90px;
+}
+.menutab
+{
+	position:absolute;
+	left: 0px;
+	top:0px;
+	width:120px;
+	height:90px;
+}
+.menushadow
+{
+	background-color: #353553;
+	position:absolute;
+	left: 12px;
+	top:2px;
+	width:120px;
+	height:180px;
+}
 .sigshadow
 {
 	background-color: #353553;
@@ -94,6 +127,27 @@ img {
 	width:760px;
 	height:40px;
 	font-size: 10px;
+}
+.borderfill {
+	background-color: #353553;
+	color: #FFFFFF; 
+	font-weight: bold; 
+	font-size: 18px;
+	line-height: 0.8em; 
+	margin: 0 0 4px;
+	padding: 8px 8px 8px 12px; 
+	border: none;
+	-moz-border-radius:6px; 
+}
+.borderoverlay {
+	background-color: #eeeeee;
+	color: #353553; 
+	font-weight: bold; 
+	line-height: 1.6em; 
+	margin: 0 0 4px;
+	padding: 8px 8px 8px 12px; 
+	border: none;
+	-moz-border-radius:6px; 
 }
 .border {
 	white-space: nowrap;

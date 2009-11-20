@@ -47,7 +47,7 @@
   }
   else
   {
-    echo "Welcome!";
+    include('menu.php');
   }
 
   // Close db connection
