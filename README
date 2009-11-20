@@ -1,1 +1,8 @@
 Just a silly little class project in php and postgres.
+
+Issues that still need to be resolved: 
+
+ - user persistence
+ - rework search form
+ - create updatekontact form
+ - logic for addkontact, updatekontact and search
