@@ -41,7 +41,11 @@
       <td align="right"><input type="text" name="zip"></td>
      </tr>
      <tr>
-      <td colspan=2 align="right"> <input type="submit" value="Add new Contact"> </td>
+      <td> Organization: </td>
+      <td align="right"><input type="text" name="org"></td>
+     </tr>
+     <tr>
+      <td colspan=2 align="right"> <input type="submit" value="Search Contacts"> </td>
      </tr>
     </table>
    </form>
