@@ -45,11 +45,12 @@
        $query = $query . " " . $queryname[$i] . " ILIKE '%" . $queryparts[$i] . "%'";
  
        $j = $i+1;
-       while ($j < 4)
+       while ($j < 5)
        {
          if ($queryparts[$j])
          {
  	  $query = $query . " AND ";
+          break;
          }
          ++$j;
        }
@@ -95,9 +96,8 @@
  
    // Close db connection
    if ($connection) { pg_close($connection); }
+
   }
-
-
  include('tail.php');
  }
 ?>
