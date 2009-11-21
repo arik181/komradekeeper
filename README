@@ -2,7 +2,7 @@ Just a silly little class project in php and postgres.
 
 Issues that still need to be resolved: 
 
- - user persistence
+ - user persistence (cookies)
  - create updatekontact form
  - fix organization search (special case)
- - logic for addkontact, updatekontact and search
+ - logic for addkontact, updatekontact 
