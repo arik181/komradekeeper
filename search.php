@@ -59,7 +59,7 @@
    $query = $query . ";";
 
    //Debug print statement
-   echo $query;
+   //echo $query;
  
    // Do the search
    $result = pg_query($connection, $query);
