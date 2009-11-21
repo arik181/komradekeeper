@@ -4,5 +4,5 @@ Issues that still need to be resolved:
 
  - user persistence
  - create updatekontact form
- - fix organization search 
+ - fix organization search (special case)
  - logic for addkontact, updatekontact and search
