@@ -2,9 +2,8 @@ Just a silly little class project in php and postgres.
 
 Issues that still need to be resolved: 
 
- - user persistence (cookies)
- - create updatekontact form
+ - fix updatekontact form
  - fix organization search (special case)
  - logic for updatekontact 
  - addkontact does not yet insert associated userid.
-    This will have to happen after cookies have been implemented.
+
