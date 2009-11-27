@@ -36,6 +36,7 @@
    if (isset($_COOKIE["uname"]))
    {
  ?>   
+   <div align="right" class="sub logout">Welcome, <?php echo $_COOKIE["uname"]; ?>!</div>
    <div align="right" class="sub logout"><a href="logout.php">Log out</a></div>
  <?
    }
