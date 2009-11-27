@@ -5,4 +5,5 @@ Issues that still need to be resolved:
  - fix updatekontact form
  - fix organization search (special case)
  - logic for updatekontact 
+ - broken page length
 
