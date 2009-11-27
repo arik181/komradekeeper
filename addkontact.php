@@ -21,7 +21,7 @@
    // Insert the new contact
    $query = "
     INSERT INTO contact
-    VALUES ( nextval('contactidseq'),'" . $_POST['name'] . "','" . $_POST['address'] . "','" . $_POST['city'] . "','" . $_POST['state'] . "','" . $_POST['zip'] . "');";
+    VALUES ( nextval('contactidseq'),'" . $_POST['name'] . "','" . $_POST['address'] . "','" . $_POST['city'] . "','" . $_POST['state'] . "','" . $_POST['zip'] . "','" . $_COOKIE['userid'] . "');";
    $result = pg_query($connection, $query);
 
    // Close db connection

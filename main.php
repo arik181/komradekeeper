@@ -22,6 +22,14 @@
  }
  else
  {
+   $query = "
+    SELECT userid AS string
+    FROM users 
+    WHERE name='" . $_COOKIE['uname'] . "' AND password = '" .$_COOKIE['passwd'] . "';";
+   $result = pg_query($connection, $query);
+   $uid = pg_fetch_row($result);
+
+   setcookie("userid", $uid[0]);
    include('head.php');
    include('menu.php');
  }
