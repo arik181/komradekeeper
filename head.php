@@ -26,7 +26,7 @@
 <div align="left" style="body">
  <a href=.><span class="whitek">K<br></span></a>
  <span class="body meshadow1">Komrade Keeper<br></span>
- <span class="body metext">Komrade Keeper<br></span>
+ <span class="body metext"><a href="index.php">Komrade Keeper</a><br></span>
  <div align="left" class="bordershadow main1shadow"> </div>
  <div align="left" class="border main1">
   <div align="left" class="listinput sub">

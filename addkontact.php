@@ -27,6 +27,8 @@
    // Close db connection
    if ($connection) { pg_close($connection); }
 
+   include('menu.php');
+
    // Debug statements
    //echo "success\n";
    //echo $query;
