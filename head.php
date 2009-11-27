@@ -2,13 +2,6 @@
 <html>
 <head>
 
-<?php 
-
-  $cookie_uname = $_COOKIE["uname"];
-  $cookie_passwd = $_COOKIE["passwd"];
-
-?>
-
 <title>Komrade Keeper</title>
  <meta name="author" content="">
  <meta name="date" content="2008-11-08T20:32:31-0800">
@@ -34,7 +27,19 @@
 <div align="left" style="body">
  <a href=.><span class="whitek">K<br></span></a>
  <span class="body meshadow1">Komrade Keeper<br></span>
- <span class="body metext"><a href="index.php">Komrade Keeper</a><br></span>
+ <span class="body metext">Komrade Keeper<br></span>
  <div align="left" class="bordershadow main1shadow"> </div>
+
+ <?php
+ 
+   // Only insert the logout link if the user is logged in.
+   if (isset($_COOKIE["uname"]))
+   {
+ ?>   
+   <div align="right" class="sub logout"><a href="logout.php">Log out</a></div>
+ <?
+   }
+ ?>
+
  <div align="left" class="border main1">
   <div align="left" class="listinput sub">
