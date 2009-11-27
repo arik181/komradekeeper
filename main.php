@@ -1,30 +1,31 @@
 <?php
- include('head.php');
+
+ include('cook.php');
  include('menu.php');
- include('greeting.php');
+ include('connect.php');
 
- if ($_SERVER['REQUEST_METHOD'] != 'POST')
+ // Compare the username and pass to the database
+ $query = "
+ SELECT name, password 
+ FROM users 
+ WHERE name = '" . $_POST['username'] . "' AND password = '" . $_POST['passwd'] . "';";
+
+ $result = pg_query($connection, $query);
+
+ //$colnum = pg_num_fields($result);
+ $rownum = pg_num_rows($result);
+
+ if (!$result || !$rownum)
  {
-   $me = $_SERVER['PHP_SELF'];
-?>
-
-<?php
-
- } else
- {
-  include('connect.php');
-
-    // Insert the new contact
-    $query = "
-    INSERT INTO users
-    VALUES ( nextval('contactidseq'),'" . $_POST['name'] . "','" . $_POST['address'] . "','" . $_POST['city'] . "','" . $_POST['state'] . "','" . $_POST['zip'] . "');";
-    $result = pg_query($connection, $query);
-  }
-
-  // Close db connection
-  if ($connection) { pg_close($connection); }
-
+   echo "Sorry, that username/password combination does not exist.";
  }
+ else
+ {
+ }
+
+ // Close db connection
+ if ($connection) { pg_close($connection); }
  include('tail.php');
+
 ?>
 

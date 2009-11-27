@@ -1,14 +1,16 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-
 <?php 
 
-  $cookie_uname = $_COOKIE["uname"];
-  $cookie_passwd = $_COOKIE["passwd"];
+  $uname =  $_POST['username'];
+  $passwd =  $_POST['passwd'];
+
+  setcookie("uname", $uname); 
+  setcookie("passwd", $passwd); 
 
 ?>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
 <title>Komrade Keeper</title>
  <meta name="author" content="">
  <meta name="date" content="2008-11-08T20:32:31-0800">
