@@ -4,6 +4,5 @@
     <div align="left" class="borderoverlay menutaboverlay">
       <a href="search.php">Search Contacts</a><br/>
       <a href="addkontact.php">New Contact</a><br/>
-      <a href="updatekontact.php">Update Contact</a><br/>
     </div>
   </div>

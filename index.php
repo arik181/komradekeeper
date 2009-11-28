@@ -1,9 +1,5 @@
 <?php
 
-
- if ($_SERVER['REQUEST_METHOD'] != 'POST')
- {
-
   if (isset($_COOKIE['uname']))
   {
     include('head.php');
@@ -17,5 +13,4 @@
     include('tail.php');
   }
 
- }
 ?>

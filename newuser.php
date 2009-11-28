@@ -1,36 +1,12 @@
 <?php
- include('head.php');
 
  if ($_SERVER['REQUEST_METHOD'] != 'POST')
  {
+
+   include('head.php');
    $me = $_SERVER['PHP_SELF'];
-?>
-
-   <form action="<?php echo $me;?>" method="POST">
-    <table border=0 cellpadding=4 cellspacing=4>
-     <tr>
-      <td colspan=2>
-      Please enter the information for the new user:
-      </td>
-     </tr>
-     <tr>
-      <td> Username: </td>
-      <td><input type="text" name="username"></td>
-     </tr>
-     <tr>
-      <td> Password: </td>
-      <td><input type="password" name="passwd"></td>
-     </tr>
-     <tr>
-      <td> Password (again): <td><input type="password" name="passwd2"></td>
-     </tr>
-     <tr>
-      <td colspan=2 align="right"> <input type="submit" value="Add new user"> </td>
-     </tr>
-    </table>
-   </form>
-
-<?php
+   include('newuserform.php');
+   include('tail.php');
 
  } else
  {
@@ -75,25 +51,34 @@
     INSERT INTO users
     VALUES ( nextval('useridseq'),'" . $_POST['passwd'] . "','" . $_POST['username'] . "');";
     $result = pg_query($connection, $query);
-}
+    include('head.php');
+    include('loginform.php');
+    echo "You may now log in.";
+    include('tail.php');
+
+    // Close db connection
+    if ($connection) { pg_close($connection); }
+
+  }
   else 
   {
     // Display an error 
     if ($inconsistentpass)
     {
-      echo $_POST['passwd'] . " " . $_POST['passwd2'] . " ";
+      include('head.php');
+      include('newuserform.php');
       echo "Passwords must match"; 
+      include('tail.php');
     }
     else if ($unameconflict)
     {
+      include('head.php');
+      include('newuserform.php');
       echo "Sorry, the username " . $_POST['username'] . " is taken."; 
+      include('tail.php');
     }
   }
 
-  // Close db connection
-  if ($connection) { pg_close($connection); }
-
  }
- include('tail.php');
 ?>
 

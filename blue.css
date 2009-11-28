@@ -410,8 +410,23 @@ img {
 	left: 10px;
 	top: 10px;
 }
-	color: #FFFFFF; 
-	position:absolute;
-	left: 10px;
-	top: 10px;
+
+/* wikitable class for skinning normal tables */
+.table {
+    margin: 1em 1em 1em 0;
+    background: #eeeeee;
+    border: 1px #aaa solid;
+    border-collapse: collapse;
 }
+.table th, .table td {
+    border: 1px #aaa solid;
+    padding: 0.2em;
+}
+.table th {
+    background: #eeeeee;
+    text-align: center;
+}
+.wikitable caption {
+    font-weight: bold;
+}
+

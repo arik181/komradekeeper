@@ -69,7 +69,7 @@
    //Debug print statement
    //echo "<br>" . pg_num_rows($result) . " rows returned \n";
  
-   echo "<table border=1 cellpadding=4 cellspacing=2>\n<tr>\n";
+   echo "<table class=\"table\">\n<tr>\n";
      
    for ($i=0;$i<$colnum;++$i)
    {
@@ -81,12 +81,25 @@
    while ($row = pg_fetch_row($result)) 
    {
     echo "<tr>";
+
     for ($i=0;$i<$colnum;++$i)
     {
+
      echo "<td>";
+     if ($i == 1)
+     {
+       echo "<a href=\"updatekontact.php\">";
+     }
      echo "$row[$i]";
+     if ($i == 1)
+     {
+       echo "</a>";
+     }
+
      echo "</td>\n";
+
     }
+
     echo "</tr>";
    }
    echo "</table>\n";
@@ -100,5 +113,6 @@
   }
  include('tail.php');
  }
+
 ?>
 
