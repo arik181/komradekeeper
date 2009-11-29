@@ -25,8 +25,10 @@
  $queryname[4] = "zip";
 
  $query = "
-  SELECT contactid,name,address,city,state,zip FROM contact 
-  WHERE userid = '" . $_COOKIE["userid"] . "' ";  //Only show user's data
+  SELECT c.contactid,c.name,c.address,c.city,c.state,c.zip
+  FROM contact c JOIN users u ON cast(c.userid as integer) = u.userid
+  WHERE u.name = '" . $_COOKIE['uname'] . "' AND u.password = '" . $_COOKIE['passwd'] .
+  "' AND c.userid = '" . $_COOKIE["userid"] . "' ";
  
  for ($i=0; $i<5; ++$i)
  {
