@@ -5,7 +5,7 @@
  {
    $me = $_SERVER['PHP_SELF'];
 
-   include('updateform.php');
+   include('searchform.php');
 
  } else
  {

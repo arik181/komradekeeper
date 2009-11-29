@@ -1,10 +1,3 @@
- <table border=0>
-  <td width=200>
-    <?php include('menu.php');?>
-    <div>
-    </div>
-  </td>
-  <td>
    <form action="<?php echo $me;?>" method="POST">
     <table border=0 cellpadding=4 cellspacing=4>
      <tr>
@@ -37,6 +30,3 @@
      </tr>
     </table>
    </form>
-  </td>
- </table>
-

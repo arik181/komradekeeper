@@ -1,15 +1,42 @@
 <?php
  include('head.php');
+ include('connect.php');
+
+ $contactid = $_GET['contactid'];
+
+ echo"<table border=0>";
+ echo"<td width=200>";
+ include('menu.php');
+ echo"<div>";
+ echo"</div>";
+ echo"</td>";
+ echo"<td>";
 
  if ($_SERVER['REQUEST_METHOD'] != 'POST')
  {
-   $me = $_SERVER['PHP_SELF'];
+  if (empty($contactid)) {
+    echo"No contact specified to update.";
+  } else
+  {
+   $query = "
+    SELECT c.name,c.address,c.city,c.state,c.zip,u.name,u.password
+    FROM contact c JOIN users u ON cast(c.userid as integer) = u.userid
+    WHERE u.name = '" . $_COOKIE['uname'] . "' AND u.password = '" . $_COOKIE['passwd'] .
+    "' AND c.userid = '" . $_COOKIE["userid"] . "'
+    AND c.contactid = " . $contactid . ";"; 
+ 
+   $contactresult = pg_query($connection, $query);
 
-   include('searchform.php');
-
+   if (pg_num_rows($contactresult) == 0) {
+    echo"Contact not found to be updated.";
+   } else
+   {
+    //$me = $_SERVER['PHP_SELF'];
+    include('updateform.php');
+   }
+  }
  } else
  {
-  include('connect.php');
 
   $queryparts[0] = $_POST['name'];
   $queryparts[1] = $_POST['address'];
@@ -93,12 +120,15 @@
    
    echo "</div>\n</div>\n";
  
- 
-   // Close db connection
-   if ($connection) { pg_close($connection); }
-
   }
- include('tail.php');
+
+  // Close db connection
+  if ($connection) { pg_close($connection); }
+
+  echo"</td>";
+  echo"</table>";
+
+  include('tail.php');
  }
 ?>
 
