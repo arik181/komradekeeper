@@ -31,95 +31,79 @@
     echo"Contact not found to be updated.";
    } else
    {
-    //$me = $_SERVER['PHP_SELF'];
-    include('updateform.php');
+    $row = pg_fetch_row($contactresult);
+    $row[$i];
+    $me = $_SERVER['PHP_SELF'];
+    echo"<form action=$me method=\"POST\">";
+    echo"<table border=0 cellpadding=4 cellspacing=4>";
+    echo"<tr>";
+    echo"<td colspan=2>";
+    echo"Update contact as needed, and then push submit button.";
+    echo"</td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td> Contact Name: </td>";
+    echo"<td align=right><input type=text name=name value=\"$row[0]\"></td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td> Address: </td>";
+    echo"<td align=right><input type=text name=address value=\"$row[1]\"></td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td> City:</td>";
+    echo"<td align=right><input type=text name=city value=\"$row[2]\"></td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td> State:</td>";
+    echo"<td align=right><input type=text name=state value=\"$row[3]\"></td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td> Zip:</td>";
+    echo"<td align=right><input type=text name=zip value=\"$row[4]\"></td>";
+    echo"</tr>";
+    echo"<tr>";
+    echo"<td colspan=2 align=right>";
+    echo"<input type=hidden name=contactid value=$contactid>";
+    echo"<input type=submit value=\"Update Contact\">";
+    echo"</td>";
+    echo"</tr>";
+    echo"</table>";
+    echo"</form>";
    }
   }
  } else
  {
+  $name = pg_escape_string($_POST['name']);
+  $address = pg_escape_string($_POST['address']);
+  $city = pg_escape_string($_POST['city']);
+  $state = pg_escape_string($_POST['state']);
+  $zip = pg_escape_string($_POST['zip']);
+  $contactid = $_POST['contactid'];
 
-  $queryparts[0] = $_POST['name'];
-  $queryparts[1] = $_POST['address'];
-  $queryparts[2] = $_POST['city'];
-  $queryparts[3] = $_POST['state'];
-  $queryparts[4] = $_POST['zip'];
-
-  $queryname[0] = "name";
-  $queryname[1] = "address";
-  $queryname[2] = "city";
-  $queryname[3] = "state";
-  $queryname[4] = "zip";
-
-  // Build the query
-  $queryempty = 1;
-
-  for ($i=0; $i<5; ++$i)
+  if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip))
   {
-    if (!empty($queryparts[$i]))
-      $queryempty = 0;
-  }
-  if ($queryempty) { include('searchform.php'); }
-  else
+    echo"All fields must have a value";
+  } else
   {
    $query = "
-    SELECT * FROM contact 
-    WHERE ";
- 
-   for ($i=0; $i<5; ++$i)
-   {
-     if ($queryparts[$i])
-     {
-       $query = $query . " " . $queryname[$i] . " ILIKE '%" . $queryparts[$i] . "%'";
- 
-       $j = $i+1;
-       while ($j < 5)
-       {
-         if ($queryparts[$j])
-         {
- 	  $query = $query . " AND ";
-          break;
-         }
-         ++$j;
-       }
-     }
-   }
- 
-   $query = $query . ";";
+    UPDATE contact 
+    SET ";
 
+   $query = $query . "name = '" . $name . "', ";
+   $query = $query . "address= '" . $address . "', ";
+   $query = $query . "city= '" . $city . "', ";
+   $query = $query . "state= '" . $state . "', ";
+   $query = $query . "zip= '" . $zip . "'";
+  
+   $query = $query . " WHERE contactid = " . $contactid . ";";
+ 
    //Debug print statement
    //echo $query;
- 
-   // Do the search
+  
+    // Do the update
    $result = pg_query($connection, $query);
-   $colnum = pg_num_fields($result);
- 
-   //Debug print statement
-   //echo "<br>" . pg_num_rows($result) . " rows returned \n";
- 
-   echo "<table border=1 cellpadding=4 cellspacing=2>\n<tr>\n";
-     
-   for ($i=0;$i<$colnum;++$i)
-   {
-    echo "<td>";
-    echo pg_field_name($result, $i);
-    echo "</td>";
-   }
-   echo "</tr><p>\n";
-   while ($row = pg_fetch_row($result)) 
-   {
-    echo "<tr>";
-    for ($i=0;$i<$colnum;++$i)
-    {
-     echo "<td>";
-     echo "$row[$i]";
-     echo "</td>\n";
-    }
-    echo "</tr>";
-   }
-   echo "</table>\n";
-   
-   echo "</div>\n</div>\n";
- 
+  
+   echo "Contact updated.";
   }
 
   // Close db connection
