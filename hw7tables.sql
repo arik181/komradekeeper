@@ -14,7 +14,7 @@ create table contact (
 	city varchar(80),
 	state varchar(80),
 	zip varchar(80),
-	userid int
+	userid varchar(80)
 
 );
 
