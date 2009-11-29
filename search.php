@@ -5,7 +5,7 @@
  {
    $me = $_SERVER['PHP_SELF'];
 
-   include('searchform.php');
+   include('updateform.php');
 
  } else
  {
@@ -40,7 +40,7 @@
   {
     if ($queryparts[$i])
     {
-      $query = $query . " AND " . $queryname[$i] . " LIKE '%" . $queryparts[$i] . "%'";
+      $query = $query . " AND " . $queryname[$i] . " ILIKE '%" . $queryparts[$i] . "%'";
     }
   }
 
@@ -75,7 +75,7 @@
     echo "<td>";
     if ($i == 1)
     {
-      echo "<a href=\"updatekontact.php?contactid=" . $row[0] . ">";
+      echo "<a href=\"updatekontact.php?contactid=" . $row[0] . "\">";
     }
     echo "$row[$i]";
     if ($i == 1)

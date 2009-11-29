@@ -35,7 +35,21 @@
    // Close db connection
    if ($connection) { pg_close($connection); }
 
-   include('menu.php');
+   echo"<table border=0>";
+    echo"<td width=200>";
+    include('menu.php');
+    echo"<div>";
+    echo"</div>";
+   echo"</td>";
+   echo"<td>";
+    echo"<table border=0>";
+     echo"<td>";
+      echo"New contact added successfully.";
+     echo"</td>";
+    echo"</table>";
+   echo"</td>";
+   echo"</table>";
+
 
    // Debug statements
    //echo "success\n";
