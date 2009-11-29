@@ -35,8 +35,8 @@
   else
   {
    $query = "
-    SELECT * FROM contact 
-    WHERE userid = '" . $_COOKIE["userid"] . "' ";
+    SELECT contactid,name,address,city,state,zip FROM contact 
+    WHERE userid = '" . $_COOKIE["userid"] . "' ";  //Only show user's data
  
    for ($i=0; $i<5; ++$i)
    {
@@ -57,10 +57,12 @@
  
    //Debug print statement
    //echo "<br>" . pg_num_rows($result) . " rows returned \n";
+
+   //include('menu.php');
  
    echo "<table class=\"table\">\n<tr>\n";
      
-   for ($i=0;$i<$colnum;++$i)
+   for ($i=1;$i<$colnum;++$i)
    {
     echo "<td>";
     echo pg_field_name($result, $i);
@@ -71,13 +73,13 @@
    {
     echo "<tr>";
 
-    for ($i=0;$i<$colnum;++$i)
+    for ($i=1;$i<$colnum;++$i)
     {
 
      echo "<td>";
      if ($i == 1)
      {
-       echo "<a href=\"updatekontact.php\">";
+       echo "<a href=\"updatekontact.php?contactid=" . $row[0] . ">";
      }
      echo "$row[$i]";
      if ($i == 1)
