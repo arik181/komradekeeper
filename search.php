@@ -36,24 +36,13 @@
   {
    $query = "
     SELECT * FROM contact 
-    WHERE ";
+    WHERE userid = '" . $_COOKIE["userid"] . "' ";
  
    for ($i=0; $i<5; ++$i)
    {
      if ($queryparts[$i])
      {
-       $query = $query . " " . $queryname[$i] . " ILIKE '%" . $queryparts[$i] . "%'";
- 
-       $j = $i+1;
-       while ($j < 5)
-       {
-         if ($queryparts[$j])
-         {
- 	  $query = $query . " AND ";
-          break;
-         }
-         ++$j;
-       }
+       $query = $query . " AND " . $queryname[$i] . " LIKE '%" . $queryparts[$i] . "%'";
      }
    }
  
