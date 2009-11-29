@@ -3,8 +3,6 @@ Just a silly little class project in php and postgres.
 Issues that still need to be resolved: 
   (See "issues" on github for more details)
 
- - fix updatekontact form
  - fix organization search (special case)
- - logic for updatekontact 
  - broken page length
 
