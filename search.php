@@ -44,7 +44,7 @@
     }
   }
 
-  $query = $query . ";";
+  $query = $query . " ORDER by name;";
 
   //Debug print statement
   //echo $query;

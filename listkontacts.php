@@ -38,7 +38,7 @@
    }
  }
 
- $query = $query . ";";
+ $query = $query . " ORDER by c.name;";
 
  $result = pg_query($connection, $query);
  $colnum = pg_num_fields($result);
