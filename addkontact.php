@@ -7,11 +7,19 @@
  $state   = $_POST['state'];
  $zip     = $_POST['zip'] ;
 
- if (($_SERVER['REQUEST_METHOD'] != 'POST') || empty($name) || empty($address) || empty($city) || empty($state) || empty($zip))
+ if (($_SERVER['REQUEST_METHOD'] != 'POST'))
  {
 
    $me = $_SERVER['PHP_SELF'];
    include('addform.php');
+
+ }
+ elseif (($_SERVER['REQUEST_METHOD'] == 'POST') && (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip)))
+ {
+
+   $me = $_SERVER['PHP_SELF'];
+   include('addform.php');
+   include('adderror.php');
 
  } else
  {
