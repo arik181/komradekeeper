@@ -15,6 +15,7 @@
   $valid = 1;
   $inconsistentpass = 0;
   $unameconflict = 0;
+  $datadoesnotexist = 0;
   // Verify the validity of the username
     // By first testing the matching passwords...
     if ($_POST['passwd'] != $_POST['passwd2'])
@@ -37,6 +38,12 @@
       {
         $valid = 0;
         $unameconflict = 1;
+      }
+
+      if (empty($_POST['username'])||empty($_POST['passwd'])||empty($_POST['passwd2']))
+      {
+        $valid = 0;
+        $datadoesnotexist = 1;
       }
     }
 
@@ -63,7 +70,14 @@
   else 
   {
     // Display an error 
-    if ($inconsistentpass)
+    if ($datadoesnotexist)
+    {
+      include('head.php');
+      include('newuserform.php');
+      echo "User and password fields are required."; 
+      include('tail.php');
+    }
+    else if ($inconsistentpass)
     {
       include('head.php');
       include('newuserform.php');
