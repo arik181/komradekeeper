@@ -14,26 +14,33 @@
      </tr>
      <tr>
       <td> Contact Name: </td>
-      <td align="right"><input type="text" name="name"></td>
+      <td align="right"><input type="text" name="name">*</td>
      </tr>
      <tr>
       <td> Address: </td>
-      <td align="right"><input type="text" name="address"></td>
+      <td align="right"><input type="text" name="address">*</td>
      </tr>
      <tr>
       <td> City:</td>
-      <td align="right"><input type="text" name="city"></td>
+      <td align="right"><input type="text" name="city">*</td>
      </tr>
      <tr>
       <td> State:</td>
-      <td align="right"><input type="text" name="state"></td>
+      <td align="right"><input type="text" name="state">*</td>
      </tr>
      <tr>
       <td> Zip:</td>
-      <td align="right"><input type="text" name="zip"></td>
+      <td align="right"><input type="text" name="zip">*</td>
+     </tr>
+     <tr>
+      <td> Email:</td>
+      <td align="right"><input type="text" name="email">&nbsp;</td>
      </tr>
      <tr>
       <td colspan=2 align="right"> <input type="submit" value="Add new Contact"> </td>
+     </tr>
+     <tr>
+      <td colspan=2 align="right"> * denotes required field</td>
      </tr>
     </table>
    </form>

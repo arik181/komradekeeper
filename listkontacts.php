@@ -25,8 +25,10 @@
  $queryname[4] = "zip";
 
  $query = "
-  SELECT c.contactid,c.name,c.address,c.city,c.state,c.zip
-  FROM contact c JOIN users u ON cast(c.userid as integer) = u.userid
+  SELECT c.contactid,c.name as \"Name\", c.address as \"Address\", c.city as \"City\",
+  c.state as \"State\", c.zip as \"Zip\", e.emailaddr as \"Email Address\"
+  FROM contact c JOIN users u ON c.userid = u.userid
+  LEFT OUTER JOIN email e ON c.contactid = e.contactid
   WHERE u.name = '" . $_COOKIE['uname'] . "' AND u.password = '" . $_COOKIE['passwd'] .
   "' AND c.userid = '" . $_COOKIE["userid"] . "' ";
  

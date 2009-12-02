@@ -32,6 +32,13 @@
     VALUES ( nextval('contactidseq'),'" . $_POST['name'] . "','" . $_POST['address'] . "','" . $_POST['city'] . "','" . $_POST['state'] . "','" . $_POST['zip'] . "','" . $_COOKIE['userid'] . "');";
    $result = pg_query($connection, $query);
 
+   if (!empty( $_POST['email'])) {
+    $query2 = "
+     INSERT INTO email
+     VALUES ( '" . $_POST['email'] . "', lastval() );";
+    $result2 = pg_query($connection, $query2);
+   }
+
    // Close db connection
    if ($connection) { pg_close($connection); }
 
