@@ -39,6 +39,14 @@
     $result2 = pg_query($connection, $query2);
    }
 
+   if (!empty( $_POST['phone'])) {
+    $query3 = "
+     INSERT INTO phone 
+     VALUES ( '" . $_POST['phone'] . "', lastval() ,'" . $_POST['phonetype'] . "');";
+    $result3 = pg_query($connection, $query3);
+   }
+
+
    // Close db connection
    if ($connection) { pg_close($connection); }
 

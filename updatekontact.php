@@ -20,7 +20,7 @@
   {
    $query = "
     SELECT c.name,c.address,c.city,c.state,c.zip,u.name,u.password
-    FROM contact c JOIN users u ON cast(c.userid as integer) = u.userid
+    FROM contact c JOIN users u ON c.userid = u.userid
     WHERE u.name = '" . $_COOKIE['uname'] . "' AND u.password = '" . $_COOKIE['passwd'] .
     "' AND c.userid = '" . $_COOKIE["userid"] . "'
     AND c.contactid = " . $contactid . ";"; 

@@ -37,6 +37,14 @@
       <td align="right"><input type="text" name="email">&nbsp;</td>
      </tr>
      <tr>
+      <td> Phone Number:</td>
+      <td align="right"><input type="text" name="phone">&nbsp;</td>
+     </tr>
+     <tr>
+      <td> Phone Type <br />(cell, home, etc):</td>
+      <td align="right"><input type="text" name="phonetype">&nbsp;</td>
+     </tr>
+     <tr>
       <td colspan=2 align="right"> <input type="submit" value="Add new Contact"> </td>
      </tr>
      <tr>
