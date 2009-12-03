@@ -6,6 +6,9 @@
  $city    = $_POST['city'];
  $state   = $_POST['state'];
  $zip     = $_POST['zip'] ;
+ $email     = $_POST['email'] ;
+ $phone = $_POST['phone'] ;
+ $phonetype     = $_POST['phonetype'] ;
 
  if (($_SERVER['REQUEST_METHOD'] != 'POST'))
  {
