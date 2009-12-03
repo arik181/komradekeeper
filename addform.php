@@ -14,23 +14,23 @@
      </tr>
      <tr>
       <td> Contact Name: </td>
-      <td align="right"><input type="text" name="name">*</td>
+      <td align="right"><input type="text" name="name" value="<?php echo $name ?>">*</td>
      </tr>
      <tr>
       <td> Address: </td>
-      <td align="right"><input type="text" name="address">*</td>
+      <td align="right"><input type="text" name="address" value="<?php echo $address ?>">*</td>
      </tr>
      <tr>
       <td> City:</td>
-      <td align="right"><input type="text" name="city">*</td>
+      <td align="right"><input type="text" name="city" value="<?php echo $city?>">*</td>
      </tr>
      <tr>
       <td> State:</td>
-      <td align="right"><input type="text" name="state">*</td>
+      <td align="right"><input type="text" name="state" value="<?php echo $state?>">*</td>
      </tr>
      <tr>
       <td> Zip:</td>
-      <td align="right"><input type="text" name="zip">*</td>
+      <td align="right"><input type="text" name="zip" value="<?php echo $zip?>">*</td>
      </tr>
      <tr>
       <td> Email:</td>

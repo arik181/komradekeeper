@@ -17,7 +17,7 @@
  elseif (($_SERVER['REQUEST_METHOD'] == 'POST') && (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip)))
  {
 
-   $me = $_SERVER['PHP_SELF'];
+   //$me = $_SERVER['PHP_SELF'];
    include('addform.php');
    include('adderror.php');
 
